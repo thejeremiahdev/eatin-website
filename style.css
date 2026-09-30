@@ -1,0 +1,1093 @@
+/* =========================================================
+   EATin — Restaurant & Private Dining
+   Main Stylesheet
+========================================================= */
+
+/* =========================================================
+   1. RESET & GLOBAL STYLES
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #f8f6f1;
+  color: #171717;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 110px 0;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   2. TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+}
+
+h2 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  color: #5f5b55;
+}
+
+/* =========================================================
+   3. HEADER
+========================================================= */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 26px 0;
+  color: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-menu a {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: opacity 0.25s ease;
+}
+
+.nav-menu a:hover {
+  opacity: 0.65;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+/* =========================================================
+   4. BUTTONS
+========================================================= */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 28px;
+  border: 1px solid transparent;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: #ffffff;
+  color: #171717;
+}
+
+.button-primary:hover {
+  background: #e9e5dc;
+}
+
+.button-secondary {
+  border-color: rgba(255, 255, 255, 0.65);
+  color: #ffffff;
+}
+
+.button-secondary:hover {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #171717;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 700;
+  transition: opacity 0.25s ease;
+}
+
+.text-link:hover {
+  opacity: 0.6;
+}
+
+/* =========================================================
+   5. HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 50px 10%;
+  overflow: hidden;
+
+  background: #171717;
+  color: #ffffff;
+}
+
+/* Hero Background */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("images/experience.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transform: scale(1.02);
+}
+
+/* Dark Overlay */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.62) 42%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+
+  z-index: 1;
+}
+
+/* Additional bottom gradient */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+
+  height: 35%;
+
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+
+  z-index: 1;
+}
+
+/* Hero Content */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  padding-top: 100px;
+  padding-bottom: 130px;
+}
+
+.hero-copy {
+  max-width: 760px;
+}
+
+/* Eyebrow */
+
+.hero-eyebrow {
+  margin-bottom: 24px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Main Heading */
+
+.hero h1 {
+  margin: 0 0 30px;
+
+  max-width: 760px;
+
+  color: #ffffff;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+/* Description */
+
+.hero-text {
+  max-width: 570px;
+
+  margin: 0 0 38px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Buttons */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero .button {
+  min-height: 54px;
+  padding: 0 30px;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+/* Primary Button */
+
+.hero .button-primary {
+  background: #ffffff;
+  color: #171717;
+
+  border: 1px solid #ffffff;
+}
+
+.hero .button-primary:hover {
+  background: #e9e5dc;
+  border-color: #e9e5dc;
+}
+
+/* Outline Button */
+
+.hero .button-outline {
+  background: transparent;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.hero .button-outline:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #171717;
+}
+
+/* Bottom Information */
+
+.hero-bottom {
+  position: absolute;
+
+  left: 50%;
+  bottom: 34px;
+
+  z-index: 3;
+
+  width: min(1180px, 90%);
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   HERO — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .hero-content {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 8vw, 5.5rem);
+  }
+
+  .hero-text {
+    max-width: 520px;
+  }
+}
+
+/* =========================================================
+   HERO — MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-background {
+    background-position: 62% center;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82),
+      rgba(0, 0, 0, 0.55)
+    );
+  }
+
+  .hero-content {
+    padding-top: 120px;
+    padding-bottom: 130px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+
+    margin-bottom: 24px;
+
+    font-size: clamp(3rem, 14vw, 4.5rem);
+    line-height: 0.98;
+  }
+
+  .hero-text {
+    max-width: 100%;
+
+    margin-bottom: 30px;
+
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero .button {
+    width: 100%;
+  }
+
+  .hero-bottom {
+    bottom: 22px;
+
+    width: 92%;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+
+    white-space: nowrap;
+  }
+}
+
+/* =========================================================
+   HERO — SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+  .hero-content {
+    padding-top: 110px;
+    padding-bottom: 115px;
+  }
+
+  .hero h1 {
+    font-size: 2.9rem;
+  }
+
+  .hero-text {
+    font-size: 0.88rem;
+  }
+
+  .hero-bottom {
+    display: none;
+  }
+}
+
+/* =========================================================
+   6. INTRO
+========================================================= */
+
+.intro {
+  padding: 120px 0;
+  background: #ffffff;
+  text-align: center;
+}
+
+.intro-content {
+  max-width: 820px;
+}
+
+.intro .eyebrow {
+  color: #77716a;
+}
+
+.intro h2 {
+  margin-bottom: 24px;
+}
+
+.intro p:last-child {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* =========================================================
+   7. ABOUT
+========================================================= */
+
+.about {
+  background: #f8f6f1;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.about-content {
+  max-width: 540px;
+}
+
+.about-content .eyebrow {
+  color: #77716a;
+}
+
+.about-content h2 {
+  margin-bottom: 26px;
+}
+
+.about-content p {
+  margin-bottom: 18px;
+}
+
+.about-image {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+
+.about-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.04);
+}
+
+/* =========================================================
+   8. SERVICES
+========================================================= */
+
+.services {
+  background: #ffffff;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.section-heading .eyebrow {
+  color: #77716a;
+}
+
+.section-heading h2 {
+  margin-bottom: 22px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #ddd9d1;
+  border: 1px solid #ddd9d1;
+}
+
+.service-card {
+  min-height: 280px;
+  padding: 38px;
+  background: #ffffff;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.service-card:hover {
+  background: #f5f2eb;
+  transform: translateY(-4px);
+}
+
+.service-number {
+  display: block;
+  margin-bottom: 50px;
+  color: #8a847b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.service-card h3 {
+  margin-bottom: 14px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   9. EXPERIENCE
+========================================================= */
+
+.feature-experience {
+  position: relative;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.76),
+      rgba(0, 0, 0, 0.38),
+      rgba(0, 0, 0, 0.18)
+    ),
+    url("images/experience.jpg") center / cover no-repeat;
+
+  color: #ffffff;
+}
+
+.feature-content {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+.feature-content .eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.feature-content h2 {
+  margin-bottom: 25px;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+}
+
+.feature-content p {
+  max-width: 570px;
+  margin-bottom: 35px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* =========================================================
+   10. PROCESS
+========================================================= */
+
+.process {
+  background: #f8f6f1;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.process-card {
+  padding-top: 25px;
+  border-top: 1px solid #cfcac1;
+}
+
+.process-number {
+  display: block;
+  margin-bottom: 35px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #77716a;
+}
+
+.process-card h3 {
+  margin-bottom: 15px;
+}
+
+.process-card p {
+  max-width: 330px;
+}
+
+/* =========================================================
+   11. GALLERY
+========================================================= */
+
+.gallery {
+  background: #ffffff;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: #e9e5dc;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   12. CALL TO ACTION
+========================================================= */
+
+.cta {
+  position: relative;
+  padding: 130px 0;
+  overflow: hidden;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("images/cta.jpg") center / cover no-repeat;
+
+  color: #ffffff;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+}
+
+.cta .eyebrow {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.cta h2 {
+  margin-bottom: 24px;
+}
+
+.cta p {
+  max-width: 620px;
+  margin: 0 auto 35px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* =========================================================
+   13. FOOTER
+========================================================= */
+
+.footer {
+  padding-top: 80px;
+  background: #171717;
+  color: #ffffff;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 70px;
+  padding-bottom: 70px;
+}
+
+.footer-brand {
+  max-width: 360px;
+}
+
+.footer-brand .logo {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.footer-brand p {
+  color: #a7a39c;
+}
+
+.footer h3 {
+  margin-bottom: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-links a,
+.footer-contact a {
+  color: #a7a39c;
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 0;
+  border-top: 1px solid #333333;
+}
+
+.footer-bottom p {
+  color: #777777;
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   14. TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .section {
+    padding: 85px 0;
+  }
+
+  .nav-menu {
+    gap: 20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-content {
+    max-width: 700px;
+  }
+
+  .about-image {
+    max-width: 650px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .process-card {
+    max-width: 650px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   15. MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+  .container {
+    width: min(92%, 1180px);
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  /* Header */
+
+  .header {
+    padding: 20px 0;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 4%;
+    right: 4%;
+
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+
+    padding: 12px 0;
+
+    background: #171717;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu a {
+    width: 100%;
+    padding: 13px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hero */
+
+  .hero {
+    min-height: 760px;
+  }
+
+  .hero-content {
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+  }
+
+  .hero-text {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons,
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  /* Intro */
+
+  .intro {
+    padding: 80px 0;
+  }
+
+  /* Services */
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: auto;
+    padding: 30px;
+  }
+
+  .service-number {
+    margin-bottom: 35px;
+  }
+
+  /* Experience */
+
+  .feature-experience {
+    min-height: 620px;
+  }
+
+  .feature-content h2 {
+    font-size: 2.8rem;
+  }
+
+  /* Gallery */
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* CTA */
+
+  .cta {
+    padding: 90px 0;
+  }
+
+  /* Footer */
+
+  .footer {
+    padding-top: 60px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding-bottom: 50px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* =========================================================
+   16. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .logo {
+    font-size: 1.7rem;
+  }
+
+  .hero {
+    min-height: 700px;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .intro h2,
+  .section-heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-content h2 {
+    font-size: 2.4rem;
+  }
+}

@@ -1,6 +1,4 @@
-# eatin-website
-Responsive restaurant and private dining website built with HTML and CSS.
- EATin — Restaurant & Private Dining Website
+# EATin — Restaurant & Private Dining Website
 
 A responsive restaurant and private dining website built with HTML and CSS.
 
@@ -8,7 +6,7 @@ A responsive restaurant and private dining website built with HTML and CSS.
 
 - Responsive design
 - Restaurant services section
-- Food/menu presentation
+- Food and menu presentation
 - Private dining information
 - Contact section
 - Mobile-friendly layout
